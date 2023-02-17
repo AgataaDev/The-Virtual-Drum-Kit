@@ -1,44 +1,28 @@
-function clap() {
-    const clap = new Audio('./resources/clap.wav');
-    clap.play();
-};
+import data from "./model/data.json" assert {type: 'json'};
 
-function hihat() {
-   const hihat = new Audio('./resources/hihat.wav');
-   hihat.play();
-};
+export default class MusicService {
 
-function kick() {
-   const kick = new Audio('./resources/kick.wav');
-   kick.play();
-};
+   MusicService(params){
+      this.params = params;
+   }
 
-function openhat() {
-   const openhat = new Audio('./resources/openhat.wav');
-   openhat.play();
-};
+   setupMusic(){
+      data.forEach((sound) => {
+         const button = document.createElement('div');
+         button.classList.add('each_button');
+         button.setAttribute('id', sound.title);
+         button.setAttribute('musicPath',sound.musicPath);
+         button.innerText = `${sound.letter} ${sound.title}`;
+         button.addEventListener('click',this.playMusic);
+           main.appendChild(button);
+         
+         });
+   
+   }
+    playMusic(e){
+        const sound = new Audio(e.target.getAttribute('musicPath'));
+        sound.play();
+     };
 
-function boom() {
-   const boom = new Audio('./resources/boom.wav');
-   boom.play();
-};
+}
 
-function ride() {
-   const ride = new Audio('./resources/ride.wav');
-   ride.play();
-};
-
-function snare() {
-   const snare = new Audio('./resources/snare.wav');
-   snare.play();
-};
-
-function tom() {
-   const tom = new Audio('./resources/tom.wav');
-   tom.play();
-};
-
-function tink() {
-   const tink = new Audio('./resources/tink.wav');
-   tink.play();
-};
