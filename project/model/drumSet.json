@@ -1,0 +1,48 @@
+[
+    {
+      "title": "clap",
+      "letter": "w",
+      "musicPath":"./resources/clap.wav"
+    },
+    {
+      "title": "hihat",
+      "letter": "s",
+      "musicPath":"./resources/hihat.wav"
+    },
+    {
+      "title": "kick",
+      "letter": "d",
+      "musicPath":"./resources/kick.wav"
+    },
+    {
+      "title": "openhat",
+      "letter": "f",
+      "musicPath":"./resources/openhat.wav"
+    },
+    {
+      "title": "boom",
+      "letter": "g",
+      "musicPath":"./resources/boom.wav"
+    },
+    {
+      "title": "ride",
+      "letter": "h",
+      "musicPath":"./resources/ride.wav"
+    },
+    {
+      "title": "snare",
+      "letter": "j",
+      "musicPath":"./resources/snare.wav"
+    },
+    {
+      "title": "tom",
+      "letter": "k",
+      "musicPath":"./resources/tom.wav"
+    },
+    {
+      "title": "tink",
+      "letter": "l",
+      "musicPath":"./resources/tink.wav"
+    }
+  ]
+  
