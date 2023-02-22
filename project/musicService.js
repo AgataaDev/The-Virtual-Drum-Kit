@@ -14,7 +14,7 @@ export default class MusicService {
          button.setAttribute('musicPath',sound.musicPath);
          button.innerText = `${sound.letter} ${sound.title}`;
          button.addEventListener('click',this.playMusic);
-           main.appendChild(button);
+         main.appendChild(button);
          
          });
    

@@ -7,6 +7,7 @@ html, body {
     background-color: rgb(48, 46, 46);
     color:white;
 }
+@media screen and (min-width: 804px) {
 #app {
     margin: 0;
     padding:0;
@@ -14,22 +15,31 @@ html, body {
     width: 100%;
 }
 .title {
+    width: 100%;
     font-size: 20px;
     background-color: rgb(67, 67, 67);
     padding: 1.5% 0 1.5% 1%;
+}
+.musicbox {
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main {
     margin: 0;
     padding:0;
-    height: 100%;
-    width: 100%;
+    /* height: 260px; */
     display: grid;
-    grid-template-columns: minmax(0, 1fr) repeat(12,1fr);
-    grid-template-rows: repeat(12,1fr);
-    gap:12px; 
+    place-items: center;
+    --auto-grid-min-size: 70%;
+    grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size),1fr));
+    grid-template-rows: repeat(3,1fr);
+    grid-gap:12px; 
     }
-
+    
 .each_button {
     background-color: rgb(67, 67, 67);
     height: 80px;
@@ -42,11 +52,21 @@ html, body {
     justify-content: center;
     align-items: center;   
    }
+
+.each_button:hover {
+    background-color:  rgb(43, 43, 43);
+    cursor: pointer;
+}
+
+.each_button:active {
+    box-shadow: 0 0.5em 0.5em -0.4em;
+    transform: translateY(-0.25em);
+}
+
 .main p {
-    /* text-align: justify; */
     width: 100%;
     grid-column: 2/span 10;
-    grid-row: 5;
+    grid-row: 1;
     font-size: 25px;
     display: flex;
     justify-content: center;
@@ -54,43 +74,144 @@ html, body {
 }
  #clap {
     grid-column: 3;
-    grid-row: 6;
+    grid-row: 2;
 } 
 #hihat{
     grid-column: 3;
-    grid-row:7;
+    grid-row:3;
 }
 #kick{
     grid-column: 4;
-    grid-row:7;
+    grid-row:3;
 }
 #openhat{
     grid-column: 5;
-    grid-row:7;
+    grid-row:3;
 }
 #boom{
     grid-column: 6;
-    grid-row:7;
+    grid-row:3;
 }
 #ride{
     grid-column: 7;
-    grid-row:7;
+    grid-row:3;
 }
 #snare{
     grid-column: 8;
-    grid-row:7;
+    grid-row:3;
 }
 #tom{
     grid-column: 9;
-    grid-row:7;
+    grid-row:3;
 }
 #tink{
     grid-column: 10;
-    grid-row:7;
+    grid-row:3;
+}}
+@media screen and (min-width: 501px) and (max-width: 803px) {
+    #app {
+        margin: 0;
+        padding:0;
+        height: 100%;
+        width: 100%;
+    }
+    .title {
+        width: 100%;
+        font-size: 20px;
+        background-color: rgb(67, 67, 67);
+        padding: 1.5% 0 1.5% 1%;
+    }
+    .musicbox {
+        height: 100vh;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .main {
+        margin: 0;
+        padding:0;
+        display: grid;
+        place-items: center;
+        --auto-grid-min-size: 70%;
+        grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size),1fr));
+        grid-template-rows: repeat(3,auto);
+        grid-gap:12px; 
+        }
+        
+    .each_button {
+        background-color: rgb(67, 67, 67);
+        height: 50px;
+        width: 50px;
+        border-radius: 3%;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 11px;
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+       }
+    
+    .each_button:hover {
+        background-color:  rgb(43, 43, 43);
+        cursor: pointer;
+    }
+    
+    .each_button:active {
+        box-shadow: 0 0.5em 0.5em -0.4em;
+        transform: translateY(-0.25em);
+    }
+    
+    .main p {
+        margin-left: 20px;
+        width: 100%;
+        grid-column: 2/span 10;
+        grid-row: 1;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+     #clap {
+        grid-column: 3;
+        grid-row: 2;
+    } 
+    #hihat{
+        grid-column: 3;
+        grid-row:3;
+    }
+    #kick{
+        grid-column: 4;
+        grid-row:3;
+    }
+    #openhat{
+        grid-column: 5;
+        grid-row:3;
+    }
+    #boom{
+        grid-column: 6;
+        grid-row:3;
+    }
+    #ride{
+        grid-column: 7;
+        grid-row:3;
+    }
+    #snare{
+        grid-column: 8;
+        grid-row:3;
+    }
+    #tom{
+        grid-column: 9;
+        grid-row:3;
+    }
+    #tink{
+        grid-column: 10;
+        grid-row:3;
+    }
 }
 
-
-@media screen and (max-width: 503px) {
+@media screen and (max-width: 500px) {
     #app{
         margin: 0;
         padding:0;
@@ -105,16 +226,15 @@ html, body {
     .main {
         margin-top: 10px;
         padding: 0;
-        height: 100%;
-        width: 100%;
+        height: 100vh;
+        width: 100vw;
         display: flex;
         align-content: stretch;
         justify-content: center;
         gap: 1px 1px;
         flex-wrap: wrap;
         font-size: large;
-        grid-auto-columns: 120px;
-        
+             
           }
     .main p {
             text-align:left; 
@@ -126,7 +246,7 @@ html, body {
     .each_button {
         background-color: rgb(67, 67, 67);
         height: 100px;
-        width: 150px;
+        width: 160px;
         flex-grow: 1;
         border-radius: 3%;
         margin: 6px;
@@ -140,17 +260,3 @@ html, body {
         flex-grow: 2;
          }
 };
-/* @media screen and (min-width: 600px) {
-    .each_button {
-        background-color: rgb(67, 67, 67);
-        height: 120px;
-        width: 120px;
-        border-radius: 3%;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;   
-    }
-}  */

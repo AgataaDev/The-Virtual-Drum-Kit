@@ -8,12 +8,15 @@ title.classList.add('title');
 title.innerText='Beat! - The Virtual Drum Kit Experience';
 app.appendChild(title);
 
+const musicBox = document.createElement('div');
+musicBox.classList.add('musicbox');
+app.appendChild(musicBox)
 const main = document.createElement('div');
 main.classList.add('main');
 const text = document.createElement('p');
 text.innerText =
   'Bringing the power of a full drum set to your fingertips, anytime, anywhere!';
-app.appendChild(main);
+musicBox.appendChild(main);
 main.appendChild(text);
 
 drumSet.forEach((sound) => {
@@ -23,7 +26,7 @@ drumSet.forEach((sound) => {
   button.setAttribute('musicPath',sound.musicPath);
   button.innerText = `${sound.letter}\n${sound.title}`;
   button.addEventListener('click',playMusicOnClick);
-main.appendChild(button);
+  main.appendChild(button);
   
   });
 
@@ -42,42 +45,14 @@ document.addEventListener('keyup',playToneFromKey);
 
 
 function playToneFromKey(e) {
-    drumSet.forEach(drumPiece => {
+      drumSet.forEach(drumPiece => {
             if (drumPiece.letter === e.key){
-            playMusicOnKey(drumPiece.musicPath);
+              playMusicOnKey(drumPiece.musicPath);
+            
         }   
     })
 }
-    // switch (e.key) {
-    //     case 'w': {
-    //         return clap();
-    //     }
-    //     case 's': {
-    //         return hihat();
-    //     }
-    //     case 'd': {
-    //         return kick();
-    //     }
-    //     case 'f': {
-    //         return openhat();
-    //     }
-    //     case 'g': {
-    //         return boom();
-    //     }
-    //     case 'h': {
-    //         return ride();
-    //     }
-    //     case 'j': {
-    //         return snare();
-    //     }
-    //     case 'k': {
-    //         return tom();
-    //     }
-    //     case 'l': {
-    //         return tink();
-    //     }
-    //     default: {
-    //         throw new Error(`Letter "${e}" is not supported`);
-    //     }
-    // }
 
+// let btn = app.getElementsByClassName('each_button');
+// btn.style.boxShadow = "0 0.5em 0.5em -0.4em";
+// btn.style.transform="translateY(-0.25em)";
