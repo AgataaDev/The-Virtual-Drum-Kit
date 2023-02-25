@@ -24,35 +24,35 @@ drumSet.forEach((sound) => {
   button.classList.add('each_button');
   button.setAttribute('id', sound.title);
   button.setAttribute('musicPath',sound.musicPath);
+  button.setAttribute('letter',sound.letter);
   button.innerText = `${sound.letter}\n${sound.title}`;
   button.addEventListener('click',playMusicOnClick);
   main.appendChild(button);
   
   });
-// const history = document.createElement('div');
-// history.classList.add('history');
-// history.innerText="History";
-// musicBox.appendChild('history');
+
+const history = document.createElement('div');
+history.classList.add('history');
+history.innerText="You recently clicked:";
+app.appendChild(history);
 
 function playMusicOnClick(e){
+  console.log(e);
+    saveInHistory(e.target.getAttribute('letter'));
     const sound = new Audio(e.target.getAttribute('musicPath'));
     sound.play();
  };
 
- function playMusicOnKey(musicPath){
-    const sound = new Audio(musicPath);
-    sound.play();
- }
-
-
+ 
 document.addEventListener('keydown',addCLassEffect);
-document.addEventListener('keyup',playToneFromKey);
+document.addEventListener('keyup',playMusicBasedOnKey);
 
-function playToneFromKey(e){
+function playMusicBasedOnKey(e){
   drumSet.forEach(drumPiece => {
         if (drumPiece.letter === e.key){
+          saveInHistory(e.key); 
           document.getElementById(drumPiece.title).classList.remove('activateOnKey'); 
-          playMusicOnKey(drumPiece.musicPath);
+          playMusicFrom(drumPiece.musicPath);
     }   
 })
 }
@@ -60,11 +60,15 @@ function playToneFromKey(e){
 function addCLassEffect(e) {
       drumSet.forEach(drumPiece => {
             if (drumPiece.letter === e.key){
-                document.getElementById(drumPiece.title).classList.add('activateOnKey');
-                
-                console.log(e.key);
-            
+                document.getElementById(drumPiece.title).classList.add('activateOnKey');            
         }   
     })
 }
 
+function playMusicFrom(musicPath){
+  const sound = new Audio(musicPath);
+  sound.play();
+}
+function saveInHistory(letter) {
+  history.innerText+=` ${letter},`;
+}
