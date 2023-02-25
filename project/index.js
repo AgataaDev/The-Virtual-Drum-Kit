@@ -29,6 +29,10 @@ drumSet.forEach((sound) => {
   main.appendChild(button);
   
   });
+// const history = document.createElement('div');
+// history.classList.add('history');
+// history.innerText="History";
+// musicBox.appendChild('history');
 
 function playMusicOnClick(e){
     const sound = new Audio(e.target.getAttribute('musicPath'));
@@ -41,18 +45,26 @@ function playMusicOnClick(e){
  }
 
 
+document.addEventListener('keydown',addCLassEffect);
 document.addEventListener('keyup',playToneFromKey);
 
+function playToneFromKey(e){
+  drumSet.forEach(drumPiece => {
+        if (drumPiece.letter === e.key){
+          document.getElementById(drumPiece.title).classList.remove('activateOnKey'); 
+          playMusicOnKey(drumPiece.musicPath);
+    }   
+})
+}
 
-function playToneFromKey(e) {
+function addCLassEffect(e) {
       drumSet.forEach(drumPiece => {
             if (drumPiece.letter === e.key){
-              playMusicOnKey(drumPiece.musicPath);
+                document.getElementById(drumPiece.title).classList.add('activateOnKey');
+                
+                console.log(e.key);
             
         }   
     })
 }
 
-// let btn = app.getElementsByClassName('each_button');
-// btn.style.boxShadow = "0 0.5em 0.5em -0.4em";
-// btn.style.transform="translateY(-0.25em)";
