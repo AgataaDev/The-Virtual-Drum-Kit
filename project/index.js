@@ -33,11 +33,10 @@ drumSet.forEach((sound) => {
 
 const history = document.createElement('div');
 history.classList.add('history');
-history.innerText="You recently clicked:";
+history.innerText="Just clicked:";
 app.appendChild(history);
 
 function playMusicOnClick(e){
-  console.log(e);
     saveInHistory(e.target.getAttribute('letter'));
     const sound = new Audio(e.target.getAttribute('musicPath'));
     sound.play();
@@ -70,5 +69,9 @@ function playMusicFrom(musicPath){
   sound.play();
 }
 function saveInHistory(letter) {
-  history.innerText+=` ${letter},`;
+  const lett = document.createElement('div');
+  lett.classList.add('each_button');
+  lett.classList.add('history_button');
+  lett.innerText = `${letter}\n${drumSet.filter(drumPiece => drumPiece.letter === letter)[0].title}`;
+  history.appendChild(lett);
 }
