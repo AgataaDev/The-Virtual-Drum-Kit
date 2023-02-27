@@ -40,9 +40,9 @@ function playMusicOnClick(e){
     saveInHistory(e.target.getAttribute('letter'));
     const sound = new Audio(e.target.getAttribute('musicPath'));
     sound.play();
- };
-
- 
+    const historyText = document.querySelector('.history');
+    historyText.style.display = 'inline-block';
+    }; 
 document.addEventListener('keydown',addCLassEffect);
 document.addEventListener('keyup',playMusicBasedOnKey);
 
@@ -52,6 +52,8 @@ function playMusicBasedOnKey(e){
           saveInHistory(e.key); 
           document.getElementById(drumPiece.title).classList.remove('activateOnKey'); 
           playMusicFrom(drumPiece.musicPath);
+        const historyText = document.querySelector('.history');
+        historyText.style.display = 'inline-block';
     }   
 })
 }
