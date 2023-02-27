@@ -1,3 +1,21 @@
+* {
+  scrollbar-width: 10px;
+  scrollbar-color: rgb(67, 67, 67) rgb(48, 46, 46);
+}
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(67, 67, 67);
+  border-radius: 20px;
+}
+*::-webkit-scrollbar-corner {
+  background-color: rgb(67, 67, 67);
+  border-radius: 20px;
+}
+*::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
 @media screen and (min-width: 804px) {
   html,
   body {
@@ -31,11 +49,10 @@
     margin: 0;
     width: 100%;
     height: 130px;
-    overflow: scroll;
+    overflow: auto;
     font-size: 20px;
     padding: 1.5% 0 1.5% 1%;
   }
-
   .main {
     margin: 0;
     padding: 0;
@@ -49,7 +66,6 @@
     grid-template-rows: repeat(3, auto);
     grid-gap: 12px;
   }
-
   .each_button {
     background-color: rgb(67, 67, 67);
     height: 80px;
@@ -66,22 +82,18 @@
     margin: 5px;
     display: inline-flex;
   }
-
   .each_button:hover {
     background-color: rgb(43, 43, 43);
     cursor: pointer;
   }
-
   .each_button:active {
     box-shadow: 0 0.5em 0.5em -0.4em;
     transform: translateY(-0.25em);
   }
-
   .activateOnKey {
     box-shadow: 0 0.5em 0.5em -0.4em;
     transform: translateY(-0.25em);
   }
-
   .main p {
     width: 100%;
     grid-column: 2 / span 10;
@@ -161,10 +173,10 @@
     margin: 0;
     width: 100%;
     height: 80px;
-    overflow: scroll;
+    overflow: auto;
     font-size: 16px;
     padding: 1.5% 0 1.5% 3%;
-    }
+  }
   .main {
     margin: 0;
     padding: 0;
@@ -190,20 +202,18 @@
     justify-content: center;
     align-items: center;
   }
-.history_button {
+  .history_button {
     margin: 5px;
     display: inline-flex;
-}
+  }
   .each_button:hover {
     background-color: rgb(43, 43, 43);
     cursor: pointer;
   }
-
   .each_button:active {
     box-shadow: 0 0.5em 0.5em -0.4em;
     transform: translateY(-0.25em);
   }
-
   .main p {
     margin-left: 20px;
     width: 100%;
@@ -251,7 +261,6 @@
     grid-row: 3;
   }
 }
-
 @media screen and (max-width: 500px) {
   html,
   body {
@@ -289,10 +298,10 @@
     margin: 0;
     width: 100%;
     height: 100px;
-    overflow: scroll;
+    overflow: auto;
     font-size: 20px;
     padding: 1.5% 0 1.5% 1%;
-    }
+  }
   .main p {
     text-align: left;
     font-size: 25px;

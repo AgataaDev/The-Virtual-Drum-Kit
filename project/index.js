@@ -69,9 +69,9 @@ function playMusicFrom(musicPath){
   sound.play();
 }
 function saveInHistory(letter) {
-  const lett = document.createElement('div');
-  lett.classList.add('each_button');
-  lett.classList.add('history_button');
-  lett.innerText = `${letter}\n${drumSet.filter(drumPiece => drumPiece.letter === letter)[0].title}`;
-  history.appendChild(lett);
+  const historyButton = document.createElement('div');
+  historyButton.classList.add('each_button');
+  historyButton.classList.add('history_button');
+  historyButton.innerText = `${letter}\n${drumSet.filter(drumPiece => drumPiece.letter === letter)[0].title}`;
+  history.appendChild(historyButton);
 }
